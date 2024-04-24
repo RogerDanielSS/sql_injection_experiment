@@ -7,6 +7,13 @@ import java.util.Map;
 
 public class HttpUtils {
 
+    /**
+    * Convert query string in a hash
+    *
+    * @param query string containig query data
+    *
+    * @return hash with query data
+    */
     public static Map<String, String> parseQueryParams(String query) throws UnsupportedEncodingException {
         Map<String, String> params = new HashMap<>();
         if (query != null) {

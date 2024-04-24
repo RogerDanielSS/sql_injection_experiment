@@ -12,6 +12,17 @@ public class DBController {
     private static final String DB_USER = "username";
     private static final String DB_PASSWORD = "password";
 
+    /**
+    * search user by name and password and return the username if it exists on database
+    * if not, returns an informing message 
+    *
+    * @param username request data
+    * @param password request data
+    *
+    * @return username or message informing that user was not found
+    *  
+    * @throws SQLException method throw this Exception if occurs any trouble with database
+    */
     public String login(String username, String password) {
         Connection connection = null;
         try {

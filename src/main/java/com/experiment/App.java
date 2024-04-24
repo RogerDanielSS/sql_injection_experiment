@@ -19,7 +19,7 @@ public class App {
             System.out.println("Error");
         }
     }
-
+    
     private static void startServer() throws Exception {
         DBController db = new DBController();
 
@@ -42,6 +42,14 @@ public class App {
             this.db = db;
         }
 
+        /**
+         * Method that deals with login requests
+         * gets request params, calls database login method and send it return as response 
+         * 
+         * @param exchange request data
+         * 
+         * @return void
+         */
         @Override
         public void handle(HttpExchange exchange) throws IOException {
             
