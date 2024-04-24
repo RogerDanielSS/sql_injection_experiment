@@ -1,5 +1,15 @@
 # sql_injection_experiment
 
+REQUEST:
+
+http://['localhost' or ip_address]:8000/login?username=usuario1&password=senha2
+
+> the endpoint '/login' accepts GET requests, so you can make that request on a regular browser
+
+
+
+SETUP GUIDE:
+
 run setup.sh or the commands in it
 
     > the versions used in the moment the project was made were
