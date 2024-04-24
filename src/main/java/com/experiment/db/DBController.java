@@ -12,24 +12,30 @@ public class DBController {
     private static final String DB_USER = "username";
     private static final String DB_PASSWORD = "password";
 
-    public void login() {
+    public String login(String username, String password) {
         Connection connection = null;
         try {
             // Connect to the database
             connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
 
             // Example: Select data from a table
-            String selectQuery = "SELECT * FROM Users";
+            String selectQuery = 
+                "SELECT * FROM Users where username = '" + username + "' and password = '" + password + "'";
             PreparedStatement selectStmt = connection.prepareStatement(selectQuery);
             ResultSet resultSet = selectStmt.executeQuery();
             while (resultSet.next()) {
                 // Process each row
                 String column1Value = resultSet.getString("username");
                 // Get other columns similarly
-                System.out.println(column1Value);
+                return column1Value;
             }
+
+            return "user not found";
         } catch (SQLException e) {
-            e.printStackTrace();
+
+            e.printStackTrace();           
+            return "Error";
+
         } finally {
             // Close connection in finally block
             if (connection != null) {

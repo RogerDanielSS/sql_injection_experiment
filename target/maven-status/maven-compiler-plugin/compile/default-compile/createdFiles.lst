@@ -1,3 +1,4 @@
 db/DBController.class
 com/experiment/App$LoginHandler.class
+utils/HttpUtils.class
 com/experiment/App.class

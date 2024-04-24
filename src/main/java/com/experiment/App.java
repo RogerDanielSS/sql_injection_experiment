@@ -6,8 +6,10 @@ import com.sun.net.httpserver.HttpExchange;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.InetSocketAddress;
+import java.util.Map;
 
 import db.DBController;
+import utils.HttpUtils;
 
 public class App {
     public static void main(String[] args) {
@@ -42,10 +44,11 @@ public class App {
 
         @Override
         public void handle(HttpExchange exchange) throws IOException {
+            
+            Map<String, String> queryParams = HttpUtils.parseQueryParams(exchange.getRequestURI().getQuery());
+            
             // Define response message
-            String response = "Hello, World!";
-
-            this.db.login();
+            String response = this.db.login(queryParams.get("username"), queryParams.get("password"));
             
             // Set response headers
             exchange.sendResponseHeaders(200, response.getBytes().length);
