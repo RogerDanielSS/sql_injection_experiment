@@ -27,7 +27,19 @@ in sql shell, run the following commands
 
     CREATE TABLE Users (username varchar(20), password varchar(20));
 
-    INSERT INTO 'users' VALUES ('usuario1', 'senha1');
-    INSERT INTO 'users' VALUES ('usuario2', 'senha2');
-    INSERT INTO 'users' VALUES ('usuario3', 'senha3');
-    INSERT INTO 'users' VALUES ('usuario4', 'senha4');
+    INSERT INTO Users VALUES ('usuario1', 'senha1');
+    INSERT INTO Users VALUES ('usuario2', 'senha2');
+    INSERT INTO Users VALUES ('usuario3', 'senha3');
+    INSERT INTO Users VALUES ('usuario4', 'senha4');
+
+to start server, first compile with
+
+    'mvn compile'
+
+WARNING: maven may download some packages for the first compilation. That's fine. DONT PANIC
+
+then run with
+
+    'mvn exec:java'
+
+WARNING: maven may download some packages for the first time it run. That's fine. DONT PANIC
