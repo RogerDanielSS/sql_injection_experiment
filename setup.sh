@@ -9,3 +9,6 @@ sudo service mariadb start
 sudo update-rc.d mariadb enable
 
 sudo apt install default-jdk
+
+sudo apt install maven
+
