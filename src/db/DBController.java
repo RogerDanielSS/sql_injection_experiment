@@ -9,17 +9,17 @@ import java.sql.SQLException;
 public class DBController {
 
     private static final String DB_URL = "jdbc:mariadb://localhost:3306/db";
-    private static final String DB_USER = "username";
-    private static final String DB_PASSWORD = "password";
+    private static final String DB_USER = "root";
+    private static final String DB_PASSWORD = "";
 
-    public void sample() {
+    public void login() {
         Connection connection = null;
         try {
             // Connect to the database
             connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
 
             // Example: Select data from a table
-            String selectQuery = "SELECT * FROM your_table_name";
+            String selectQuery = "SELECT * FROM Users";
             PreparedStatement selectStmt = connection.prepareStatement(selectQuery);
             ResultSet resultSet = selectStmt.executeQuery();
             while (resultSet.next()) {
@@ -28,16 +28,6 @@ public class DBController {
                 // Get other columns similarly
                 System.out.println(column1Value);
             }
-
-            // Example: Insert data into a table
-            String insertQuery = "INSERT INTO your_table_name (column1, column2) VALUES (?, ?)";
-            PreparedStatement insertStmt = connection.prepareStatement(insertQuery);
-            insertStmt.setString(1, "value1");
-            insertStmt.setString(2, "value2");
-            insertStmt.executeUpdate();
-
-            // Other operations (update, delete) can be performed similarly
-
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
