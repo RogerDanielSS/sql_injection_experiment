@@ -9,8 +9,8 @@ import java.sql.SQLException;
 public class DBController {
 
     private static final String DB_URL = "jdbc:mariadb://localhost:3306/db";
-    private static final String DB_USER = "root";
-    private static final String DB_PASSWORD = "";
+    private static final String DB_USER = "username";
+    private static final String DB_PASSWORD = "password";
 
     public void login() {
         Connection connection = null;
@@ -24,7 +24,7 @@ public class DBController {
             ResultSet resultSet = selectStmt.executeQuery();
             while (resultSet.next()) {
                 // Process each row
-                String column1Value = resultSet.getString("column1");
+                String column1Value = resultSet.getString("username");
                 // Get other columns similarly
                 System.out.println(column1Value);
             }

@@ -1,3 +1,5 @@
+package com.experiment;
+
 import com.sun.net.httpserver.HttpServer;
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpExchange;
@@ -7,7 +9,7 @@ import java.net.InetSocketAddress;
 
 import db.DBController;
 
-public class ExperimentalDB {
+public class App {
     public static void main(String[] args) {
         try {
             startServer();
