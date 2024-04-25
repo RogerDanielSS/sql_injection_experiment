@@ -57,9 +57,6 @@ public class App {
             
             // Define response message
             String response = this.db.login(queryParams.get("username"), queryParams.get("password"));
-            
-            System.out.println(queryParams.get("username"));
-            System.out.println(queryParams.get("password"));
 
             // Set response headers
             exchange.sendResponseHeaders(200, response.getBytes().length);
