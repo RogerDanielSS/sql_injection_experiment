@@ -6,7 +6,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import java.util.List;
+import java.util.ArrayList;
 import java.util.regex.Pattern;
+
+import com.experiment.models.User;
 
 public class DBController {
 
@@ -114,6 +118,29 @@ public class DBController {
                 }
             }
         }
+    }
+
+    public List<User> allUsers() {
+        List<User> userList = new ArrayList<>();
+        userList.add(new User("test", ""));
+        userList.add(new User("test", ""));
+        return userList;
+    }
+
+    public User createUser(User user) {
+        return new User("test", "");
+    }
+
+    public User getUser(int id) {
+        return new User("test", "");
+    }
+
+    public boolean updateUser(User user) {
+        return true;
+    }
+
+    public boolean deleteUser(int id) {
+        return true;
     }
 
     /**

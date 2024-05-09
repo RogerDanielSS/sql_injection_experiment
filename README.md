@@ -35,7 +35,7 @@ in sql shell, run the following commands
 
     USE db;
 
-    CREATE TABLE Users (username varchar(20), password varchar(20));
+    CREATE TABLE Users (id MEDIUMINT NOT NULL AUTO_INCREMENT, username varchar(20), password varchar(20));
 
     INSERT INTO Users VALUES ('usuario1', 'senha1');
     INSERT INTO Users VALUES ('usuario2', 'senha2');
